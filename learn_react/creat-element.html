@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- if add Id or class you can css the html file as code below or add other css file -->
+    <!-- <style>
+         #idJs{
+            color: aqua
+        }
+        /* .nameClass{
+            color: brown;
+        } */
+    </style> -->
+</head>
+<body>
+    <div id = "root"></div>
+    <script>
+        const rooot =  document.getElementById("root");
+        const h2 = document.createElement('h1');
+        h2.innerText = "Hello guys!!!";
+        // add id
+        h2.id = "idJs";
+        // add class
+        h2.className="nameClass";
+
+        // can css by Object.assign
+        Object.assign(h2.style, {
+            color: 'red',
+            backgroundColor: '#333',
+            
+        })
+
+        // append in brower
+        rooot.appendChild(h2);
+    </script>
+
+</body>
+</html>

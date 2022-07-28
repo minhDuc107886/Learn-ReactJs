@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+     <!-- tạo element với Dom và React -->
+    <script>
+        // // DOM
+        // const h1Dom =document.createElement('h1')
+        // h1Dom.title = 'Hello'
+        // h1Dom. className = "heading"
+        // h1Dom.innerText = "Hello Guys!"
+        // document.body.appendChild(h1Dom)
+
+        // // React -> cần React-Dom để hiển thị lên web
+
+        // React.createElement(type, props,children,n)
+        // const h1React = React.createElement('h1',{
+        //     title: "hello",
+        //     className: "heading"
+        // }, "Helllo guys! ")
+
+
+
+        // ul ,li  with Dom
+
+    const ulDom = document.createElement('ul')
+    const liDom1 = document.createElement('li')
+    const liDom2 = document.createElement('li')
+    liDom1.innerHTML = "Javascript"
+    liDom2.innerHTML = "ReactJsDOm"
+    ulDom.appendChild(liDom1)
+    ulDom.appendChild(liDom2)
+    document.body.appendChild(ulDom)
+        
+    // ul,li with React
+        const ulReact = React.createElement(
+            'ul',
+            null,
+            React.createElement('li',null,'Javascript'),
+            React.createElement('li',null,'ReactJS'),
+        )
+        
+        console.log(ulReact)
+    </script>
+</body>
+</html>
