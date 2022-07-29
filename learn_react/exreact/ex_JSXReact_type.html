@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Element Type</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <style>
+        .fix-img{
+            height: 200px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Content(){
+            return (
+                <div className="post-item">
+                    <img className="fix-img" src="https://i.pinimg.com/originals/9d/60/22/9d6022f153768025ad37f51d89d29ece.jpg" alt=""/>
+                    <h2 className="titleContent"></h2>
+                    <p>Somthing here to demo </p>
+                    <p>Somthing here to demo </p>
+                </div>
+            )
+        }
+
+        const app = (
+            <React.Fragment>
+            <Content/>
+            <Content/>
+            <Content/>
+            <Content/>
+            </React.Fragment>
+
+        )
+
+        ReactDOM.render(app,document.getElementById("root"))
+    </script>
+</body>
+</html>

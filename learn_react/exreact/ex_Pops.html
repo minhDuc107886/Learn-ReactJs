@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props - Properties </title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const courses = [
+            {
+            "id" : "1",
+            "title" : "learn React",
+            "image" : "https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png",
+            "student" : 100000,
+            "description" : "this courses is very good for beginner"
+            },
+            {
+            "id" : "2",
+            "title" : "learn HTML",
+            "image" : "https://inekeyuliam.github.io/images/html.png",
+            "student" : 1000001,
+            "description" : "this courses is very good for beginner"
+            },
+            {
+            "id" : "3",
+            "title" : "learn CSS",
+            "image" : "https://funix.edu.vn/wp-content/uploads/2021/12/m%C6%B0%CC%81c-%C4%91%C3%B4%CC%A3-%C6%B0u-ti%C3%AAn-khi-a%CC%81p-du%CC%A3ng-nhi%C3%AA%CC%80u-CSS-1.jpg",
+            "student" : 1000002,
+            "description" : "this courses is very good for beginner"
+            }
+            
+        ]
+
+        function PostItem({
+            title,
+            image,
+            description,
+            student
+        }){
+            return(
+                <div>
+                    <img src= {image} alt="" />
+                    <h1>{title}</h1>
+                    <h2>Student: {student}</h2>
+                    <p>{description}</p>
+                </div>
+            )
+        }
+
+        function App(){
+            return(
+                <div id="Wrapper">
+                    {courses.map(course =>(
+                        <PostItem
+                            key = {course.id}
+                            title = {course.title}
+                            image = {course.image}
+                            description = {course.description}
+                            student = {course.student}
+
+                        />
+                    ))}
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App/>,document.getElementById('root'))
+
+    </script>
+</body>
+</html>
