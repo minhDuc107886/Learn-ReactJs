@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // map
+        //  có thể tạo list từ 1 mảng như sau từ map và bắt buộc phải chuyền vào 1 biến số
+        // cấu trúc có thể sư dụng arrow function như ví dụ sau:
+
+        // const myArray = ['apple', 'banana', 'orange']
+        // const myList = myArray.map((item) => item + ' ')
+
+
+        // Destructuring:
+        const vehicleOne = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red',
+            registration: {
+                city: 'Houston',
+                state: 'Texas',
+                country: 'USA'
+            }
+        }
+
+        function Vehicle({ brand, model,city}){
+                return(
+                    <div>
+                        <h1>{city}</h1>
+                        <h2> My car {brand}, this model {model}</h2>
+                    </div>
+                )
+        }
+
+
+        // App render 
+        function App() {
+            return (
+                <React.Fragment>
+                    <Vehicle
+                        brand = {vehicleOne.brand}
+                        city = {vehicleOne.city}
+                        model = {vehicleOne.model}
+                    />
+
+                </React.Fragment>
+            )
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+
+</html>

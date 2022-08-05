@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component linh hoạt </title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <!-- Phần 1
+    - Xử lý Dom event
+    - Component đc đặt tên bắt đầu bằng chữ cái in hoa 
+    - Boolean, NUll và underfined không được render
+    - Kết hợp toán tử logic để render theo điều kiện  -->
+
+    <!-- # Phần 2:
+        - Props trong JSX
+        - <Your component
+            propName1 = "String literals"
+            propName2 = {expression}> 
+            />
+        - Props default to "true"
+        - Speard/ Rest props
+        - Children prop
+            -<Your component> String  literals</Your component>
+            - <Your component>{expression} </Your component >
+        -Render props -->
+    
+
+    <div id = "root"></div>
+    <script type="text/babel">
+
+        const Form = {
+            Input(){
+                return <input/>
+            },
+            CheckBox(){
+                return <input type =" checbox"/>
+            }
+        }
+        function App(){
+            return(
+                <React.Fragment>
+                    
+                </React.Fragment>              
+            )
+        }
+
+        ReactDOM.render(<App/>,document.getElementById("root"))
+    </script>
+
+</body>
+</html>
