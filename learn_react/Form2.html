@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id = 'root'></div>
+    <script type = 'text/babel'>
+        
+        function Button({title,href,onClick}){
+            // gán nút button cho biến Component để dễ thuận tiện chuyển đổi
+            let Component = 'button' // component có dạng button tag
+            const props = {}
+            if(href){
+                Component = 'a' // component có dạng a tag
+                props.href =href
+            }
+
+            if(onClick){
+                props.onClick = onClick
+            }
+            return (
+                <Component {...props}>
+                    {title}
+                </Component>
+            )
+        }
+
+        function App(){
+            return (
+               <React.Fragment> 
+                    <Button
+                        title = 'Click me'
+                        href = 'https://youtu.be/5SU6P-cqoJw?t=877'
+                        onClick = {()=>console.log(Math.random())}
+                    />    
+               </React.Fragment> 
+            )
+        }
+
+        ReactDOM.render(<App/>,document.getElementById('root'))
+    </script>
+</body>
+</html>
