@@ -25,7 +25,7 @@
 
             return(
                 <React.Fragment>
-                    <Component {...props}>
+                    <Component onClick = {onClick}>
                         {"click link"}
                     </Component>
                 </React.Fragment>
@@ -38,8 +38,8 @@
             return(
                 <React.Fragment>
                     <Button
-                        href = "https://www.youtube.com/watch?v=ibqgJQv5yQk&list=PLlObjXG4dL2wbRF0XhEUKNhfg-cPQXWwF&index=2&t=1352s"
-                        //onClick = {()=> console.log('you clicked')}
+                        // hrref = "https://www.youtube.com/watch?v=ibqgJQv5yQk&list=PLlObjXG4dL2wbRF0XhEUKNhfg-cPQXWwF&index=2&t=1352s"
+                        onClick = {()=> console.log('you clicked')}
                     />
                 </React.Fragment>
             )
